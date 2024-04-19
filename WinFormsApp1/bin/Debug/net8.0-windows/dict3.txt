@@ -1,0 +1,27 @@
+Ant:/ӕnt/:(n):Con kiến:Ants are moving.
+Apple:/ˈӕpl/:(n):Quả táo:This apple is so good.
+Bat:/bӕt/:(n):Con dơi:There is a bat in the house.
+Bat:/bӕt/:(n):Gậy bóng chày:I will use this bat for the next battle.
+Bat:/bӕt/:(v):Đánh bằng gậy bóng chày:Bat-batted-batted:Strike, Hit, Swat:Pitch , Throw, Toss:He bats the ball with his left hand.
+Bamboo:/bӕmˈbuː/:(n):Cây tre:Bamboos are Fubao's favourite food. 
+Bamboo:/bӕmˈbuː/:(adj):Làm từ tre: The price of this bamboo furniture is so reasonable.
+Can:/kӕn/:(n):Cái lon:I have a can of juice.
+Can:/kӕn/:(v):Có thể:Can-could:Be able to, Enable:Can not, Can't:I can love you for one day.
+Can:/kӕn/:(v):Đóng lon:Can-canned-canned:Preserve, Jar, Tin: Unseal, Open, Expose:Pepsi's products are canned everyday.
+Deer:/bӕt/:(n):Con hươu, con nai: This deer deserve a better life.
+Eagle:/ˈiːɡl/:(n):Đại bàng: Eagle is the king of the sky.
+Evidence:/ˈevidəns/:(n):Bằng chứng:Proof, Confirmation, Verification, Witness, Documentation:Denial, Disproof, Refutation, Contradiction: You need to show us your evidence that you've gathered.
+Friendship:/ˈfrend.ʃɪp/:(n):Tình bạn:Fellowship, Relationship, Bond, Amity:Enmity, Hostility, Estrangement:Our friendship is invicible.
+Girl:/ɡɜːl/:(n):Con gái:Young woman, Daugther, Gal:Boy:Girls like me don't cry.
+Light:/lait/:(v):Thắp sáng:Light-lit-lit:Brighten, Illuminate, Spark:Extinguish, Douse, Dim, Quench, Darken:Light the candle up, it's too dark.
+Light:/lait/:(n):Ánh sáng, đèn:Illumination, Radiance, Brightness, Glow, Shine:Darkness, Obscurity, Shadow, Blackness:You can turn on the light.
+Light:/lait/:(adj):Nhẹ, dễ dàng:Soft, Mild, Easy, Feather-light, Airy:Heavy, Weighty, Serious, Grave:I can handle this light work.
+Mother:/ˈmʌð.ər/:(n):Mẹ:Mom, Mommy, Mammy, Mum:My mother is busy now.
+New:/njuː/:(adj):Mới:Fresh, Recent, Modern, Brand new, Up-to-date: Old, Out-dated, Used, Antique:What will happen to you if you get a new shoes?
+Nod:/nɒd/:(v):Gật đầu:Nod-nodded-nodded:Accept, Approve, Assent: Shake, Reject, Refuse, Disagree:In some countries, nodding means you disargee.
+Project:/ˈprɒdʒ.ekt/:(n):Dự án:Assignment, Task, Enterprise, Scheme: This project take five weeks to be done.
+Project:/prəˈdʒekt/:(v):Lên kế hoạch, dự báo:Project-projected-projected:Forecast, Predict, Estimate, Foresee:Retrospect:We're projecting for the next meeting.
+Immediately:/ɪˈmiː.di.ət.li/:(adv):Ngay lập tức:Instanly, Promptly, Directly:Slowly:She can do that immediately.
+Immediately:/ɪˈmiː.di.ət.li/:(conj):Ngay vừa lúc:Right away,Instantly, Straightaway, Without delay, Without hesitation: Overtime, After a while:Immediately she'd gone, I remembered her name.
+
+

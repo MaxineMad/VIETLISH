@@ -1,0 +1,22 @@
+ant:/ӕnt/:(n):con kiến
+apple:/ˈӕpl/:(n):táo
+bat:/bӕt/:(n):con dơi:(n):gậy bóng chày:(v):đánh bằng gậy bóng chày
+bamboo:/bӕmˈbuː/:(n):cây tre:(adj):làm từ tre
+can:/kӕn/:(v):có thể:(v):đóng lon:(n):cái lon
+deer:/bӕt/:(n):con hươu, con nai
+eagle:/ˈiːɡl/:(n):đại bàng
+evidence:/ˈevidəns/:(n):bằng chứng
+fake:/feik/:(n):đồ giả:(adj):giả:(v):giả danh
+friendship:/ˈfrend.ʃɪp/:(n):tình bạn
+girl:/ɡɜːl/:(n):con gái
+light:/lait/:(v):thắp sáng:(n):ánh sáng:(adj):nhẹ
+mother:/ˈmʌð.ər/:(n):mẹ
+mud:/mʌd/:(n):bùn đất
+new:/njuː/:(adj):mới
+nod:/nɒd/:(v):gật đầu
+october:/ɒkˈtəʊ.bər/:(n):tháng mười
+orange:/ˈorindʒ/:(n):trái cam,màu cam:(adj):có màu cam, có vị cam
+project:/ˈprɒdʒ.ekt/:(n):dự án:/prəˈdʒekt/:(v):lên kế hoạch
+
+
+
