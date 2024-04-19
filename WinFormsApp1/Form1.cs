@@ -143,7 +143,7 @@ namespace WinFormsApp1
                     {
                         if ((oppos_uncut == "") && (sames_uncut == ""))
                         {
-                            tb2.Text = null;
+                            tb2.AppendText(null);
                         }
                         else
                         {
@@ -168,7 +168,7 @@ namespace WinFormsApp1
                     }
                     else
                     {
-                        tb1.Text = null;
+                        tb1.AppendText(null);
                     }
                 }
             }
