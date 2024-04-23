@@ -1,6 +1,9 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
+using System.Net.Security;
+using System.Runtime.Intrinsics.X86;
+using System.Windows.Forms;
 using static WinFormsApp1.FileName;
 namespace WinFormsApp1
 {
@@ -21,6 +24,33 @@ namespace WinFormsApp1
             foreach (string line in lines)
             {
                 string[] parts = line.Split(':');
+                if (parts.Length == 2)
+                {
+                    string word = parts[0].Trim();
+                    string mean = parts[1].Trim();
+                    if (ev.Contains(word) == false)
+                    {
+                        ev.Add(word, new vietlish("", "", mean, "", "", "", ""));
+                    }
+                }
+                if (parts.Length == 3)
+                {
+                    string word = parts[0].Trim();
+                    string form = parts[1].Trim();
+                    string mean = parts[2].Trim();
+                    if (ev.Contains(word + " " + mean) == false)
+                    {
+                        ev.Add(word, new vietlish("", form, mean, "", "", "", ""));
+                    }
+                    if (ve.Contains(word))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        ve.Add(word, form);
+                    }
+                }    
                 if (parts.Length == 5)
                 {
                     string word = parts[0].Trim();
@@ -28,7 +58,10 @@ namespace WinFormsApp1
                     string form = parts[2].Trim();
                     string mean = parts[3].Trim();
                     string use = parts[4].Trim();
-                    ev.Add(word + " " + mean, new vietlish(ipa, form, mean, "", "", "", use));
+                    if (ev.Contains(word + " " + mean) == false)
+                    {
+                        ev.Add(word + " " + mean, new vietlish(ipa, form, mean, "", "", "", use));
+                    }
                     if (ve.Contains(word))
                     {
                         continue;
@@ -46,7 +79,10 @@ namespace WinFormsApp1
                     string mean = parts[3].Trim();
                     string same = parts[4].Trim();
                     string use = parts[5].Trim();
-                    ev.Add(word + " " + mean, new vietlish(ipa, form, mean, "", same, "", use));
+                    if (ev.Contains(word + " " + mean) == false)
+                    {
+                        ev.Add(word + " " + mean, new vietlish(ipa, form, mean, "", same, "", use));
+                    }
                     if (ve.Contains(word))
                     {
                         continue;
@@ -65,7 +101,10 @@ namespace WinFormsApp1
                     string same = parts[4].Trim();
                     string oppo = parts[5].Trim();
                     string use = parts[6].Trim();
-                    ev.Add(word + " " + mean, new vietlish(ipa, form, mean, "", same, oppo, use));
+                    if (ev.Contains(word + " " + mean) == false)
+                    {
+                        ev.Add(word + " " + mean, new vietlish(ipa, form, mean, "", same, oppo, use));
+                    }
                     if (ve.Contains(word))
                     {
                         continue;
@@ -85,7 +124,10 @@ namespace WinFormsApp1
                     string same = parts[5].Trim();
                     string oppo = parts[6].Trim();
                     string use = parts[7].Trim();
-                    ev.Add(word + " " + mean, new vietlish(ipa, form, mean, verb, same, oppo, use));
+                    if (ev.Contains(word + " " + mean) == false)
+                    {
+                        ev.Add(word + " " + mean, new vietlish(ipa, form, mean, verb, same, oppo, use));
+                    }
                     if (ve.Contains(word))
                     {
                         continue;
@@ -103,6 +145,37 @@ namespace WinFormsApp1
         }
         private void search_Click(object sender, EventArgs e)
         {
+            tb2.Size = new System.Drawing.Size(390, 254);
+            tb2.Location = new System.Drawing.Point(380, 86);
+            tb2.BringToFront();
+            label3.Size = new System.Drawing.Size(175, 22);
+            label3.Location = new System.Drawing.Point(398, 61);
+            label4.Visible = false;
+            textBox1.Visible = false;
+            textBox1.Enabled = false;
+            IDictionaryEnumerator k = ev.GetEnumerator();
+            while (k.MoveNext())
+            {
+                string form_checked;
+                string cut = k.Key.ToString();
+                string[] part = cut.Split(' ');
+                vietlish description = (vietlish)k.Value;
+                if (part[0] == searchstick.Text)
+                {
+                    form_checked = description.form;
+                    if (form_checked == "")
+                    {
+                        tb2.Size = new System.Drawing.Size(194, 254);
+                        tb2.Location = new System.Drawing.Point(594, 86);
+                        label3.Location = new System.Drawing.Point(594, 61);
+                        label4.Visible = true;
+                        textBox1.Visible = true;
+                        textBox1.Enabled = true;
+                        break;
+                    }
+                }
+            }
+            k.Reset();
             tb.Clear();
             tb1.Clear();
             tb2.Clear();
@@ -113,13 +186,12 @@ namespace WinFormsApp1
             string sames_uncut = "";
             string oppos_uncut = "";
             string uses = "";
-            IDictionaryEnumerator k = ev.GetEnumerator();
             while (k.MoveNext())
             {
                 string cut = k.Key.ToString();
                 string[] part = cut.Split(' ');
                 vietlish description = (vietlish)k.Value;
-                if (part[0] == searchstick.Text)
+                if ((part[0] == searchstick.Text) || (k.Key.ToString() == searchstick.Text))
                 {
                     ipas = description.ipa;
                     forms = description.form;
@@ -128,7 +200,14 @@ namespace WinFormsApp1
                     sames_uncut = description.same;
                     oppos_uncut = description.oppo;
                     uses = description.use;
-                    tb.AppendText(searchstick.Text + " " + ipas + Environment.NewLine + "- " + forms + " : " + means + Environment.NewLine + uses + Environment.NewLine);
+                    if (forms != "")
+                    {
+                        tb.AppendText(searchstick.Text + " " + ipas + Environment.NewLine + "- " + forms + " : " + means + Environment.NewLine + uses + Environment.NewLine);
+                    }
+                    else
+                    {
+                        textBox1.AppendText("- " + k.Key.ToString() + " : " + means + Environment.NewLine);
+                    }
                     if ((oppos_uncut == "") && (sames_uncut != ""))
                     {
                         string[] parts = sames_uncut.Split(",");
@@ -175,6 +254,37 @@ namespace WinFormsApp1
         }
         private void searchstick_SelectedValueChanged(object sender, EventArgs e)
         {
+            tb2.Size = new System.Drawing.Size(390, 254);
+            tb2.Location = new System.Drawing.Point(380, 86);
+            tb2.BringToFront();
+            label3.Size = new System.Drawing.Size(175, 22);
+            label3.Location = new System.Drawing.Point(398, 61);
+            label4.Visible = false;
+            textBox1.Visible = false;
+            textBox1.Enabled = false;
+            IDictionaryEnumerator k = ev.GetEnumerator();
+            while (k.MoveNext())
+            {
+                string form_checked;
+                string cut = k.Key.ToString();
+                string[] part = cut.Split(' ');
+                vietlish description = (vietlish)k.Value;
+                if (part[0] == searchstick.Text)
+                {
+                    form_checked = description.form;
+                    if (form_checked == "")
+                    {
+                        tb2.Size = new System.Drawing.Size(194, 254);
+                        tb2.Location = new System.Drawing.Point(594, 86);
+                        label3.Location = new System.Drawing.Point(594, 61);
+                        label4.Visible = true;
+                        textBox1.Visible = true;
+                        textBox1.Enabled = true;
+                        break;
+                    }    
+                }
+            }
+            k.Reset();
             tb.Clear();
             tb1.Clear();
             tb2.Clear();
@@ -185,13 +295,12 @@ namespace WinFormsApp1
             string sames_uncut = "";
             string oppos_uncut = "";
             string uses = "";
-            IDictionaryEnumerator k = ev.GetEnumerator();
             while (k.MoveNext())
             {
                 string cut = k.Key.ToString();
                 string[] part = cut.Split(' ');
                 vietlish description = (vietlish)k.Value;
-                if (part[0] == searchstick.Text)
+                if ((part[0] == searchstick.Text) || (k.Key.ToString() == searchstick.Text))
                 {
                     ipas = description.ipa;
                     forms = description.form;
@@ -200,7 +309,14 @@ namespace WinFormsApp1
                     sames_uncut = description.same;
                     oppos_uncut = description.oppo;
                     uses = description.use;
-                    tb.AppendText(searchstick.Text + " " + ipas + Environment.NewLine + "- " + forms + " : " + means + Environment.NewLine + uses + Environment.NewLine);
+                    if (forms != "")
+                    {
+                        tb.AppendText(searchstick.Text + " " + ipas + Environment.NewLine + "- " + forms + " : " + means + Environment.NewLine + uses + Environment.NewLine);
+                    }
+                    else
+                    {
+                        textBox1.AppendText("- " + k.Key.ToString() + " : " + means + Environment.NewLine);
+                    }
                     if ((oppos_uncut == "") && (sames_uncut != ""))
                     {
                         string[] parts = sames_uncut.Split(",");

@@ -37,6 +37,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            textBox1 = new TextBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // search
@@ -56,7 +58,7 @@
             tb.Multiline = true;
             tb.Name = "tb";
             tb.ScrollBars = ScrollBars.Vertical;
-            tb.Size = new Size(380, 352);
+            tb.Size = new Size(326, 352);
             tb.TabIndex = 1;
             // 
             // searchstick
@@ -73,19 +75,19 @@
             // 
             // tb1
             // 
-            tb1.Location = new Point(398, 341);
+            tb1.Location = new Point(344, 368);
             tb1.Multiline = true;
             tb1.Name = "tb1";
-            tb1.Size = new Size(390, 97);
+            tb1.Size = new Size(444, 70);
             tb1.TabIndex = 3;
             // 
             // tb2
             // 
-            tb2.Location = new Point(398, 86);
+            tb2.Location = new Point(617, 86);
             tb2.Multiline = true;
             tb2.Name = "tb2";
             tb2.ScrollBars = ScrollBars.Vertical;
-            tb2.Size = new Size(390, 218);
+            tb2.Size = new Size(171, 254);
             tb2.TabIndex = 4;
             // 
             // close
@@ -102,7 +104,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(398, 316);
+            label1.Location = new Point(344, 343);
             label1.Name = "label1";
             label1.Size = new Size(84, 22);
             label1.TabIndex = 6;
@@ -122,11 +124,30 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(398, 61);
+            label3.Location = new Point(617, 61);
             label3.Name = "label3";
             label3.Size = new Size(175, 22);
             label3.TabIndex = 8;
             label3.Text = "Synonym && Antonym";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(344, 86);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Size = new Size(267, 254);
+            textBox1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(398, 61);
+            label4.Name = "label4";
+            label4.Size = new Size(111, 22);
+            label4.TabIndex = 10;
+            label4.Text = "Phrasel Verb";
             // 
             // Form1
             // 
@@ -134,7 +155,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            ControlBox = false;
+            Controls.Add(label4);
+            Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -146,7 +168,7 @@
             Controls.Add(search);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "DICTIONARY";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -163,5 +185,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private TextBox textBox1;
+        private Label label4;
     }
 }

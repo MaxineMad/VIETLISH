@@ -35,6 +35,17 @@ namespace WinFormsApp1
             {
                 base.InnerHashtable.Add(w, m);
             }
+            public bool Contains(string w)
+            {
+                if (base.InnerHashtable.ContainsKey(w))
+                {
+                    return true;
+                }    
+                else
+                {
+                    return false;
+                }
+            }
         }
     }
 }
